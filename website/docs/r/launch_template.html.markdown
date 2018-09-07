@@ -75,6 +75,8 @@ resource "aws_launch_template" "foo" {
       Name = "test"
     }
   }
+  
+  user_data = "${base64encode(...)}"
 }
 ```
 
@@ -245,6 +247,7 @@ Each `tag_specifications` block supports the following:
 
 The following attributes are exported along with all argument references:
 
+* `arn` - Amazon Resource Name (ARN) of the launch template.
 * `id` - The ID of the launch template.
 * `default_version` - The default version of the launch template.
 * `latest_version` - The latest version of the launch template.
